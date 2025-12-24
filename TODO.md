@@ -5,13 +5,13 @@ This document outlines the tasks required to re-implement Reactflow using Web Co
 ## 1. Project Setup and Core Component Implementation
 
 ### Rendering
-- [ ] Create a main container Web Component for the graph (`<graph-container>`).
-- [ ] Implement a Web Component for nodes (`<graph-node>`).
-- [ ] Implement a Web Component for edges (`<graph-edge>`).
+- [ ] Create a main container Web Component for the graph (`<flow-graph>`).
+- [ ] Implement a Web Component for nodes (`<flow-node>`).
+- [ ] Implement a Web Component for edges (`<flow-edge>`).
 - [ ] Ensure nodes and edges support customization through attributes and slots.
 
 ### Interaction and State Management
-- [ ] Implement seamless zooming and panning within the `<graph-container>`.
+- [ ] Implement seamless zooming and panning within the `<flow-graph>`.
 - [ ] Enable single and multi-selection of graph elements.
 - [ ] Add keyboard shortcuts for common actions (e.g., delete, copy, paste).
 - [ ] Implement a state management solution for nodes, edges, and viewport.
@@ -24,11 +24,11 @@ This document outlines the tasks required to re-implement Reactflow using Web Co
 ## 2. Plugin Components
 
 ### UI Controls
-- [ ] Create a `<minimap-component>` to display a preview of the graph.
-- [ ] Create a `<controls-component>` with buttons for zooming in, zooming out, and fitting the view.
+- [ ] Create a `<flow-minimap>` to display a preview of the graph.
+- [ ] Create a `<flow-controls>` with buttons for zooming in, zooming out, and fitting the view.
 
 ### Background
-- [ ] Create a `<background-component>` with configurable dot or line patterns.
+- [ ] Create a `<flow-background>` with configurable dot or line patterns.
 
 ## 3. Event System and Advanced Features
 
@@ -45,13 +45,13 @@ This document outlines the tasks required to re-implement Reactflow using Web Co
     - [ ] `smoothstep` edge
     - [ ] `step` edge
     - [ ] `bezier` edge
-- [ ] Implement a `<connection-line>` component that appears when dragging from a node handle.
+- [ ] Implement a `<flow-connection-line>` component that appears when dragging from a node handle.
 - [ ] Implement a drag-selection rectangle for selecting multiple nodes.
 
 ## 4. Programmatic API and Accessibility
 
 ### Programmatic API
-- [ ] Expose a programmatic API on the `<graph-container>` component.
+- [ ] Expose a programmatic API on the `<flow-graph>` component.
 - [ ] Implement a `fitView()` method to adjust the viewport to fit all nodes.
 - [ ] Implement a `zoomTo()` method to zoom to a specific level.
 - [ ] Implement methods for adding, removing, and updating nodes and edges.
