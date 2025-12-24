@@ -45,7 +45,16 @@ Organize the repository as follows:
 
 ## 3. Coding Conventions
 
-(Unchanged from previous version - emphasizes modularity, Shadow DOM, and ES Modules)
+### Web Components
+-   **Naming:** Use custom element names with a prefix, e.g., `<flow-graph>`, `<flow-node>`. The filename should match the component name (e.g., `flow-graph.js` defines `<flow-graph>`).
+-   **Modularity:** Each component should be in its own file.
+-   **API:** Use attributes for configuration and custom events for communication.
+-   **Styling:** Use a Shadow DOM for encapsulation. Define styles in a `<style>` tag within the component's template. Use CSS Custom Properties for theming, defined in `styles/theme.css`.
+
+### JavaScript
+-   **ES Modules:** Use ES Modules (`import`/`export`) for all JavaScript files.
+-   **No Build Step:** Write code that can run directly in modern browsers without a build or transpilation step.
+-   **Formatting:** Use Prettier for consistent code formatting.
 
 ## 4. Tooling and Development
 
@@ -66,4 +75,18 @@ Organize the repository as follows:
 
 ## 6. Programmatic Checks
 
-(Unchanged from previous version - requires Playwright tests for rendering, interaction, events, and API)
+After implementing the core components and features, you must write and run a series of programmatic checks to verify the implementation. These checks should be implemented as Playwright tests.
+
+### Verification Script (`tests/playwright/verify.spec.js`)
+-   **Test 1: Core Rendering:**
+    -   Verify that the `<flow-graph>` component renders without errors.
+    -   Verify that nodes and edges are rendered correctly within the graph.
+-   **Test 2: Interaction:**
+    -   Verify that zooming and panning work as expected.
+    -   Verify that nodes can be dragged and selected.
+-   **Test 3: Events:**
+    -   Verify that custom events (`node-click`, `connect`, etc.) are dispatched correctly.
+-   **Test 4: API:**
+    -   Verify that the programmatic API (`fitView()`, `zoomTo()`) works as expected.
+
+You must run these tests and ensure they pass before submitting the final implementation.
